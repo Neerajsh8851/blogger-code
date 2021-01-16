@@ -1,0 +1,41 @@
+// add key listener
+ // up, down, left, right are the boolean flags
+ // if these flags are true, ship can move.
+canvas.addKeyListener(new KeyAdapter() {
+
+    // this method will run when the user pressed any 
+    // key on the keyboard
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            up = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            down = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            left = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            right = true;
+        }
+    }
+
+    // this method will run when the user released any 
+    // key on the keyboard
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            up = false;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            down = false;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            left = false;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            right = false;
+        }
+    }
+});
