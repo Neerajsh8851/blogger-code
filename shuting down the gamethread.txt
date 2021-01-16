@@ -1,0 +1,22 @@
+private void shutDown() {
+    running = false;
+    // wait for gameThread to stop
+    try {
+        gameThread.join();
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+
+    // Stop the application
+    System.exit(0);
+}
+
+//....
+//.....
+
+app.addWindowListener(new WindowAdapter() {
+        @Override
+        public void windowClosing(WindowEvent e) {
+            app.shutDown();
+        }
+    });
