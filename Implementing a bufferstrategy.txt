@@ -1,0 +1,23 @@
+public void gameLoop() {
+        // Draw and show the single frame
+        do {
+        do {
+            Graphics g = null;
+            try {
+                g = bs.getDrawGraphics();
+                g.clearRect(0, 0, getWidth(), getHeight());
+                // Draw on to buffer
+                render();
+            } finally {
+                if (g != null) {
+                    g.dispose();
+                }
+            }
+        // Repeat the rendering if the drawing buffer contents
+        // were restored
+        } while (bs.contentsRestored());
+        // Copy or swap the video pointer
+        bs.show();
+        // Repeat the rendering if the drawing buffer was lost
+        } while (bs.contentsLost());
+        }
