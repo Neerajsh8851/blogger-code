@@ -7,12 +7,14 @@ public class TTT {
     private final Scanner scanner = new Scanner(System.in);
     private Game game;
 
-    // default names of player
+    // default names of players
     private String p1 = "Player 1";
     private String p2 = "Player 2";
 
     public void run() {
+        // Write available commands to the console
         showMSG();
+        // Takes commands in while loop
         processUserCMD();
     }
 
@@ -58,12 +60,12 @@ public class TTT {
                         game = null;
                     }
                 }
-
         }
     }
 
     private void processUserCMD() {
         while (true) {
+            // read line from console
             String cmd = scanner.nextLine();
             // remove leading and trailing spaces, if any exists.
             cmd = cmd.trim();
